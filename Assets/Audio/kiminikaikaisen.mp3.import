@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/kiminikaikaisen.mp3-c424f6871996f49e55da551a3d2102ed.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/kiminikaikaisen.mp3"
+dest_files=[ "res://.import/kiminikaikaisen.mp3-c424f6871996f49e55da551a3d2102ed.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

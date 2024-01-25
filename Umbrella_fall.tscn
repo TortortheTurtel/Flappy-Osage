@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Umbrella_fall.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Umbrella.tscn" type="PackedScene" id=2]
+
+[node name="Umbrella_fall" type="Sprite"]
+z_index = -80
+script = ExtResource( 1 )
+
+[node name="Umbrella" parent="." instance=ExtResource( 2 )]
+
+[connection signal="die" from="Umbrella" to="." method="_on_Umbrella_die"]

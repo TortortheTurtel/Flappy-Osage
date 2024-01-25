@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FX_-_Bling_-_C_Mefenamic.wav-e4ad9d2793a1b5d9793d29546828358c.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/FX_-_Bling_-_C_Mefenamic.wav"
+dest_files=[ "res://.import/FX_-_Bling_-_C_Mefenamic.wav-e4ad9d2793a1b5d9793d29546828358c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

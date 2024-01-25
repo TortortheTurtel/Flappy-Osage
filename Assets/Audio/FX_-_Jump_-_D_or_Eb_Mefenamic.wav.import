@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FX_-_Jump_-_D_or_Eb_Mefenamic.wav-f5b6dd79d5d04cb7b73448506da7afb4.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/FX_-_Jump_-_D_or_Eb_Mefenamic.wav"
+dest_files=[ "res://.import/FX_-_Jump_-_D_or_Eb_Mefenamic.wav-f5b6dd79d5d04cb7b73448506da7afb4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

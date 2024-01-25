@@ -1,0 +1,333 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Osage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/tower1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/towerII.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/towerIII.tscn" type="PackedScene" id=5]
+[ext_resource path="res://umbrellas.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Osage.gd" type="Script" id=7]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
+
+[sub_resource type="TileSet" id=3]
+0/name = "icon.png 0"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 2 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="World" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Osage" parent="." instance=ExtResource( 1 )]
+position = Vector2( -722, 0 )
+
+[node name="sketch" type="TileMap" parent="."]
+tile_set = SubResource( 3 )
+cell_size = Vector2( 100, 64 )
+format = 1
+tile_data = PoolIntArray( -851900, 0, 0, -851899, 0, 0, -851898, 0, 0, -786396, 0, 0, -786395, 0, 0, -786394, 0, 0, -786375, 0, 0, -786374, 0, 0, -786373, 0, 0, -786364, 0, 0, -786362, 0, 0, -786335, 0, 0, -786334, 0, 0, -786332, 0, 0, -786331, 0, 0, -786314, 0, 0, -786312, 0, 0, -786303, 0, 0, -786301, 0, 0, -786299, 0, 0, -786285, 0, 0, -786284, 0, 0, -786282, 0, 0, -786281, 0, 0, -786280, 0, 0, -786266, 0, 0, -786265, 0, 0, -786263, 0, 0, -786262, 0, 0, -786261, 0, 0, -720860, 0, 0, -720837, 0, 0, -720828, 0, 0, -720826, 0, 0, -720798, 0, 0, -720795, 0, 0, -720778, 0, 0, -720775, 0, 0, -720767, 0, 0, -720765, 0, 0, -720764, 0, 0, -720763, 0, 0, -720748, 0, 0, -720746, 0, 0, -720729, 0, 0, -720727, 0, 0, -720725, 0, 0, -720709, 0, 0, -720708, 0, 0, -720704, 0, 0, -655324, 0, 0, -655323, 0, 0, -655322, 0, 0, -655302, 0, 0, -655301, 0, 0, -655300, 0, 0, -655292, 0, 0, -655291, 0, 0, -655290, 0, 0, -655262, 0, 0, -655259, 0, 0, -655242, 0, 0, -655240, 0, 0, -655231, 0, 0, -655227, 0, 0, -655212, 0, 0, -655210, 0, 0, -655209, 0, 0, -655208, 0, 0, -655193, 0, 0, -655190, 0, 0, -655174, 0, 0, -655171, 0, 0, -655169, 0, 0, -655167, 0, 0, -589786, 0, 0, -589765, 0, 0, -589756, 0, 0, -589754, 0, 0, -589726, 0, 0, -589723, 0, 0, -589706, 0, 0, -589703, 0, 0, -589695, 0, 0, -589691, 0, 0, -589676, 0, 0, -589674, 0, 0, -589672, 0, 0, -589657, 0, 0, -589655, 0, 0, -589653, 0, 0, -589636, 0, 0, -589633, 0, 0, -589631, 0, 0, -524252, 0, 0, -524251, 0, 0, -524250, 0, 0, -524229, 0, 0, -524220, 0, 0, -524219, 0, 0, -524218, 0, 0, -524190, 0, 0, -524187, 0, 0, -524170, 0, 0, -524168, 0, 0, -524159, 0, 0, -524140, 0, 0, -524138, 0, 0, -524137, 0, 0, -524136, 0, 0, -524121, 0, 0, -524119, 0, 0, -524118, 0, 0, -524117, 0, 0, -524101, 0, 0, -524097, 0, 0, -524095, 0, 0, -458566, 0, 0, -458565, 0, 0, -458564, 0, 0, -458563, 0, 0, -458560, 0, 0, -393212, 0, 0, -393202, 0, 0, -393192, 0, 0, -393182, 0, 0, -393172, 0, 0, -393162, 0, 0, -393152, 0, 0, -393142, 0, 0, -393132, 0, 0, -393122, 0, 0, -393112, 0, 0, -393102, 0, 0, -393032, 0, 0 )
+
+[node name="umbrellas" parent="." instance=ExtResource( 6 )]
+
+[node name="Towers" type="Node2D" parent="."]
+z_index = -6
+
+[node name="tower1" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 389, 68 )
+
+[node name="towerII" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 236, 311 )
+
+[node name="towerIII" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 71, 368 )
+
+[node name="towerII5" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 1113, 489 )
+z_index = 1
+
+[node name="towerII2" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 822, 192 )
+
+[node name="towerIII2" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 1078, -23 )
+
+[node name="towerIII3" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 1355, 323 )
+
+[node name="towerII4" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 1769, 328 )
+
+[node name="towerII6" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 1768, -210 )
+z_index = -1
+
+[node name="towerIII4" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 1899, 310 )
+
+[node name="tower2" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 2256, 120 )
+
+[node name="towerII3" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 2404, 8 )
+
+[node name="towerIII5" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 2527, 50 )
+
+[node name="tower3" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 2737, 238 )
+
+[node name="towerII8" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 3185, 171 )
+
+[node name="tower4" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 3459, 133 )
+
+[node name="towerII7" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 3595, -27 )
+
+[node name="towerIII6" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 2973, 329 )
+
+[node name="towerIII7" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 3741, 62 )
+
+[node name="towerII9" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 3975, 404 )
+
+[node name="towerIII9" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 4211, 335 )
+
+[node name="tower5" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 4243, 125 )
+z_index = -1
+
+[node name="towerIII8" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 3967, -84 )
+z_index = -1
+
+[node name="tower6" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 4510, 312 )
+
+[node name="towerIII10" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 4745, 52 )
+
+[node name="towerIII15" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 5322, -179 )
+
+[node name="tower7" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 4981, -9 )
+
+[node name="tower8" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 5593, 353 )
+
+[node name="towerII10" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 5442, 260 )
+
+[node name="towerII11" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 5812, -22 )
+
+[node name="towerIII12" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 6041, 225 )
+
+[node name="tower9" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 6242, 347 )
+
+[node name="towerII13" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 6789, 299 )
+
+[node name="towerIII13" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 6575, 385 )
+
+[node name="tower10" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 7084, 128 )
+
+[node name="tower11" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 7242, 314 )
+
+[node name="tower12" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 7427, 136 )
+
+[node name="towerII12" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 7426, 430 )
+
+[node name="tower13" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 7837, 315 )
+
+[node name="towerIII14" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 8173, 343 )
+z_index = 1
+
+[node name="tower15" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 5229, 327 )
+
+[node name="towerIII11" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 4974, 347 )
+
+[node name="tower16" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 8315, 313 )
+
+[node name="towerIII16" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 8580, 63 )
+
+[node name="towerIII17" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 8890, 243 )
+
+[node name="towerII14" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 9095, 239 )
+
+[node name="tower17" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 9263, 84 )
+
+[node name="tower18" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 9292, 441 )
+
+[node name="towerII15" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 9468, 266 )
+
+[node name="tower19" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 9743, 331 )
+
+[node name="tower20" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 9940, 488 )
+
+[node name="towerII16" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 10136, 192 )
+
+[node name="towerIII18" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 10396, 46 )
+
+[node name="towerII17" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 10645, 184 )
+
+[node name="tower21" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 10850, 305 )
+
+[node name="towerII18" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 11194, 207 )
+
+[node name="tower22" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 11404, 127 )
+
+[node name="towerII19" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 11452, 343 )
+
+[node name="tower23" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 11936, 218 )
+
+[node name="tower24" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 12093, 221 )
+
+[node name="tower25" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 12256, 218 )
+
+[node name="towerIII19" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 12816, 36 )
+
+[node name="tower26" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 12415, 217 )
+
+[node name="tower27" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 12573, 219 )
+z_index = -1
+
+[node name="towerII21" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 14001, -77 )
+
+[node name="tower30" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 13309, 133 )
+
+[node name="towerII22" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 13155, 306 )
+
+[node name="towerII23" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 13448, 315 )
+
+[node name="towerIII20" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 13643, -26 )
+
+[node name="towerIII21" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 13822, 329 )
+
+[node name="towerII24" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 13600, 455 )
+
+[node name="tower28" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 13031, 504 )
+
+[node name="tower29" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 10964, 315 )
+
+[node name="towerII27" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 14275, 323 )
+
+[node name="towerIII27" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 14429, -92 )
+
+[node name="towerII28" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 14762, 291 )
+
+[node name="tower14" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 15001, 312 )
+
+[node name="tower31" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 14022, 550 )
+
+[node name="tower32" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 15158, 314 )
+
+[node name="towerIII22" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 15302, 49 )
+
+[node name="towerIII23" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 15614, 173 )
+
+[node name="tower33" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 15912, 470 )
+
+[node name="towerII20" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 16068, 243 )
+
+[node name="towerIII24" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 16227, 203 )
+
+[node name="towerII25" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 16509, 206 )
+
+[node name="towerII26" parent="Towers" instance=ExtResource( 4 )]
+position = Vector2( 16748, 213 )
+
+[node name="towerIII25" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 16967, 67 )
+
+[node name="tower34" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 17421, 356 )
+
+[node name="towerIII26" parent="Towers" instance=ExtResource( 5 )]
+position = Vector2( 7576, 257 )
+
+[node name="tower35" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 7992, 319 )
+
+[node name="tower36" parent="Towers" instance=ExtResource( 3 )]
+position = Vector2( 5348, 639 )
+
+[connection signal="game_reset" from="Osage" to="." method="_on_Osage_game_reset"]
