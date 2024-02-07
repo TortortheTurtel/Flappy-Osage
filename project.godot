@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="kimi ni kairun"
+config/name="Flappy Osage"
 run/main_scene="res://Osage.tscn"
 config/icon="res://icon.png"
 
