@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Osage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scenes/towerIII.tscn" type="PackedScene" id=5]
 [ext_resource path="res://umbrellas.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Osage.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Umbrella.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -45,6 +46,165 @@ tile_set = SubResource( 3 )
 cell_size = Vector2( 100, 64 )
 format = 1
 tile_data = PoolIntArray( -851900, 0, 0, -851899, 0, 0, -851898, 0, 0, -786396, 0, 0, -786395, 0, 0, -786394, 0, 0, -786375, 0, 0, -786374, 0, 0, -786373, 0, 0, -786364, 0, 0, -786362, 0, 0, -786335, 0, 0, -786334, 0, 0, -786332, 0, 0, -786331, 0, 0, -786314, 0, 0, -786312, 0, 0, -786303, 0, 0, -786301, 0, 0, -786299, 0, 0, -786285, 0, 0, -786284, 0, 0, -786282, 0, 0, -786281, 0, 0, -786280, 0, 0, -786266, 0, 0, -786265, 0, 0, -786263, 0, 0, -786262, 0, 0, -786261, 0, 0, -720860, 0, 0, -720837, 0, 0, -720828, 0, 0, -720826, 0, 0, -720798, 0, 0, -720795, 0, 0, -720778, 0, 0, -720775, 0, 0, -720767, 0, 0, -720765, 0, 0, -720764, 0, 0, -720763, 0, 0, -720748, 0, 0, -720746, 0, 0, -720729, 0, 0, -720727, 0, 0, -720725, 0, 0, -720709, 0, 0, -720708, 0, 0, -720704, 0, 0, -655324, 0, 0, -655323, 0, 0, -655322, 0, 0, -655302, 0, 0, -655301, 0, 0, -655300, 0, 0, -655292, 0, 0, -655291, 0, 0, -655290, 0, 0, -655262, 0, 0, -655259, 0, 0, -655242, 0, 0, -655240, 0, 0, -655231, 0, 0, -655227, 0, 0, -655212, 0, 0, -655210, 0, 0, -655209, 0, 0, -655208, 0, 0, -655193, 0, 0, -655190, 0, 0, -655174, 0, 0, -655171, 0, 0, -655169, 0, 0, -655167, 0, 0, -589786, 0, 0, -589765, 0, 0, -589756, 0, 0, -589754, 0, 0, -589726, 0, 0, -589723, 0, 0, -589706, 0, 0, -589703, 0, 0, -589695, 0, 0, -589691, 0, 0, -589676, 0, 0, -589674, 0, 0, -589672, 0, 0, -589657, 0, 0, -589655, 0, 0, -589653, 0, 0, -589636, 0, 0, -589633, 0, 0, -589631, 0, 0, -524252, 0, 0, -524251, 0, 0, -524250, 0, 0, -524229, 0, 0, -524220, 0, 0, -524219, 0, 0, -524218, 0, 0, -524190, 0, 0, -524187, 0, 0, -524170, 0, 0, -524168, 0, 0, -524159, 0, 0, -524140, 0, 0, -524138, 0, 0, -524137, 0, 0, -524136, 0, 0, -524121, 0, 0, -524119, 0, 0, -524118, 0, 0, -524117, 0, 0, -524101, 0, 0, -524097, 0, 0, -524095, 0, 0, -458566, 0, 0, -458565, 0, 0, -458564, 0, 0, -458563, 0, 0, -458560, 0, 0, -393212, 0, 0, -393202, 0, 0, -393192, 0, 0, -393182, 0, 0, -393172, 0, 0, -393162, 0, 0, -393152, 0, 0, -393142, 0, 0, -393132, 0, 0, -393122, 0, 0, -393112, 0, 0, -393102, 0, 0, -393032, 0, 0 )
+
+[node name="Umbrella" type="Node2D" parent="."]
+visible = false
+
+[node name="Umbrella5" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 702, 178 )
+
+[node name="Umbrella" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 66, 27 )
+
+[node name="Umbrella8" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 1232, 200 )
+
+[node name="Umbrella2" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 1375, -188 )
+
+[node name="Umbrella9" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 1506, 234 )
+
+[node name="Umbrella10" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 5145, 153 )
+
+[node name="Umbrella11" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 5518, -302 )
+
+[node name="Umbrella12" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 5333, 96 )
+
+[node name="Umbrella13" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 8442, 168 )
+
+[node name="Umbrella3" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 2090, 203 )
+
+[node name="Umbrella4" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 2663, 29 )
+
+[node name="Umbrella6" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 3093, 32 )
+
+[node name="Umbrella7" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 3342, 170 )
+
+[node name="Umbrella14" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 4099, 148 )
+
+[node name="Umbrella15" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 4502, -270 )
+
+[node name="Umbrella16" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 4630, 17 )
+
+[node name="Umbrella17" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 5077, -248 )
+
+[node name="Umbrella18" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 8750, 190 )
+
+[node name="Umbrella23" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 9827, 130 )
+
+[node name="Umbrella24" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 10029, 90 )
+
+[node name="Umbrella19" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 9010, -3 )
+
+[node name="Umbrella20" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 9470, -206 )
+
+[node name="Umbrella22" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 9715, -210 )
+
+[node name="Umbrella21" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 9585, 206 )
+
+[node name="Umbrella25" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 10512, 234 )
+
+[node name="Umbrella26" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 10746, 191 )
+
+[node name="Umbrella27" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 11050, 193 )
+
+[node name="Umbrella28" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 11762, 208 )
+
+[node name="Umbrella33" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 12908, 246 )
+
+[node name="Umbrella34" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 13163, -201 )
+
+[node name="Umbrella35" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 13821, -226 )
+
+[node name="Umbrella29" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 11959, -212 )
+
+[node name="Umbrella30" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 12122, -215 )
+
+[node name="Umbrella31" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 12296, -210 )
+
+[node name="Umbrella32" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 12478, -210 )
+
+[node name="Umbrella36" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 14151, 194 )
+
+[node name="Umbrella37" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 14907, -143 )
+
+[node name="Umbrella38" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 15495, 197 )
+
+[node name="Umbrella39" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 16382, 165 )
+
+[node name="Umbrella40" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 16625, 162 )
+
+[node name="Umbrella41" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 17134, 42 )
+
+[node name="Umbrella42" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 17267, -79 )
+
+[node name="Umbrella43" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 17369, -81 )
+
+[node name="Umbrella44" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 17248, 48 )
+
+[node name="Umbrella45" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 17173, -57 )
+
+[node name="Umbrella46" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 17320, -167 )
+
+[node name="Umbrella47" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 5920, 250 )
+
+[node name="Umbrella48" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 6699, 100 )
+
+[node name="Umbrella49" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 7249, -173 )
+
+[node name="Umbrella50" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 7370, 158 )
+
+[node name="Umbrella51" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 7722, 194 )
+
+[node name="Umbrella52" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 8079, 105 )
 
 [node name="umbrellas" parent="." instance=ExtResource( 6 )]
 

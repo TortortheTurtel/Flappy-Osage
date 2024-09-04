@@ -24,11 +24,11 @@ onready var Sounds_Kimi = $SoundfFx/Kimi
 var score = 0 setget setscore
 var velocity = Vector2.ZERO
 
-var game_state = GAMMING setget setGame_State,getGame_State
+var game_state = GAMING setget setGame_State,getGame_State
 enum{
 	PAUSE,
 	LOSE,
-	GAMMING
+	GAMING
 }
 
 signal game_paused
@@ -42,7 +42,7 @@ func setGame_State(state):
 		Credits_text.visible = true
 		if losetype == Normal:
 			Sounds_Lose.play()
-	elif state == GAMMING:
+	elif state == GAMING:
 		Credits_text.visible = false
 		effectSlider.visible = false
 		musicSlider.visible = false
@@ -79,7 +79,7 @@ func animation():
 
 func _physics_process(delta):
 	match game_state:
-		GAMMING:
+		GAMING:
 			move(delta)
 			if Happytime.time_left == 0:
 				pass
@@ -116,11 +116,11 @@ func setscore(addScore):
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("ui_accept"):
-		if game_state == GAMMING and Input.is_action_just_pressed("ui_accept") != true:
+		if game_state == GAMING and Input.is_action_just_pressed("ui_accept") != true:
 			setGame_State(PAUSE)
 		elif game_state == PAUSE:
 			pause_text.margin_top = -500
-			setGame_State(GAMMING)
+			setGame_State(GAMING)
 
 signal game_reset
 
@@ -138,7 +138,7 @@ func lose():
 	Sounds_Kimi.volume_db -= 0.2
 	velocity = Vector2.ZERO
 	
-	if game_state == GAMMING:
+	if game_state == GAMING:
 		Losetime.start()
 		setGame_State(PAUSE)
 		setGame_State(LOSE)
@@ -167,7 +167,7 @@ func lose():
 			position.x = -485
 			position.y = 0
 			setscore(-score)
-			setGame_State(GAMMING)
+			setGame_State(GAMING)
 			Sounds_Kimi.play()
 			pause_text.margin_top = -500
 			get_node("Sprite").visible = true

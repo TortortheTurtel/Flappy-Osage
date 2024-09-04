@@ -4,16 +4,16 @@
 
 [node name="umbrellas" type="Node2D"]
 
-[node name="Umbrella5" parent="." instance=ExtResource( 1 )]
-position = Vector2( 702, 178 )
+[node name="Umbrella54" parent="." instance=ExtResource( 1 )]
+position = Vector2( 66, 27 )
 
-[node name="Umbrella" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 66, 27 )
 
 [node name="Umbrella8" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1232, 200 )
 
-[node name="Umbrella2" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1375, -188 )
 
 [node name="Umbrella9" parent="." instance=ExtResource( 1 )]
@@ -31,31 +31,31 @@ position = Vector2( 5333, 96 )
 [node name="Umbrella13" parent="." instance=ExtResource( 1 )]
 position = Vector2( 8442, 168 )
 
-[node name="Umbrella3" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella4" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2090, 203 )
 
-[node name="Umbrella4" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella6" parent="." instance=ExtResource( 1 )]
 position = Vector2( 2663, 29 )
 
-[node name="Umbrella6" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella7" parent="." instance=ExtResource( 1 )]
 position = Vector2( 3093, 32 )
 
-[node name="Umbrella7" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella14" parent="." instance=ExtResource( 1 )]
 position = Vector2( 3342, 170 )
 
-[node name="Umbrella14" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella15" parent="." instance=ExtResource( 1 )]
 position = Vector2( 4099, 148 )
 
-[node name="Umbrella15" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella16" parent="." instance=ExtResource( 1 )]
 position = Vector2( 4502, -270 )
 
-[node name="Umbrella16" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella17" parent="." instance=ExtResource( 1 )]
 position = Vector2( 4630, 17 )
 
-[node name="Umbrella17" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella18" parent="." instance=ExtResource( 1 )]
 position = Vector2( 5077, -248 )
 
-[node name="Umbrella18" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella19" parent="." instance=ExtResource( 1 )]
 position = Vector2( 8750, 190 )
 
 [node name="Umbrella23" parent="." instance=ExtResource( 1 )]
@@ -64,28 +64,28 @@ position = Vector2( 9827, 130 )
 [node name="Umbrella24" parent="." instance=ExtResource( 1 )]
 position = Vector2( 10029, 90 )
 
-[node name="Umbrella19" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella20" parent="." instance=ExtResource( 1 )]
 position = Vector2( 9010, -3 )
 
-[node name="Umbrella20" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella21" parent="." instance=ExtResource( 1 )]
 position = Vector2( 9470, -206 )
 
 [node name="Umbrella22" parent="." instance=ExtResource( 1 )]
 position = Vector2( 9715, -210 )
 
-[node name="Umbrella21" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella25" parent="." instance=ExtResource( 1 )]
 position = Vector2( 9585, 206 )
 
-[node name="Umbrella25" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella26" parent="." instance=ExtResource( 1 )]
 position = Vector2( 10512, 234 )
 
-[node name="Umbrella26" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella27" parent="." instance=ExtResource( 1 )]
 position = Vector2( 10746, 191 )
 
-[node name="Umbrella27" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella28" parent="." instance=ExtResource( 1 )]
 position = Vector2( 11050, 193 )
 
-[node name="Umbrella28" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella29" parent="." instance=ExtResource( 1 )]
 position = Vector2( 11762, 208 )
 
 [node name="Umbrella33" parent="." instance=ExtResource( 1 )]
@@ -97,65 +97,65 @@ position = Vector2( 13163, -201 )
 [node name="Umbrella35" parent="." instance=ExtResource( 1 )]
 position = Vector2( 13821, -226 )
 
-[node name="Umbrella29" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella30" parent="." instance=ExtResource( 1 )]
 position = Vector2( 11959, -212 )
 
-[node name="Umbrella30" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella31" parent="." instance=ExtResource( 1 )]
 position = Vector2( 12122, -215 )
 
-[node name="Umbrella31" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella32" parent="." instance=ExtResource( 1 )]
 position = Vector2( 12296, -210 )
 
-[node name="Umbrella32" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella36" parent="." instance=ExtResource( 1 )]
 position = Vector2( 12478, -210 )
 
-[node name="Umbrella36" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella37" parent="." instance=ExtResource( 1 )]
 position = Vector2( 14151, 194 )
 
-[node name="Umbrella37" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella38" parent="." instance=ExtResource( 1 )]
 position = Vector2( 14907, -143 )
 
-[node name="Umbrella38" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella39" parent="." instance=ExtResource( 1 )]
 position = Vector2( 15495, 197 )
 
-[node name="Umbrella39" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella40" parent="." instance=ExtResource( 1 )]
 position = Vector2( 16382, 165 )
 
-[node name="Umbrella40" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella41" parent="." instance=ExtResource( 1 )]
 position = Vector2( 16625, 162 )
 
-[node name="Umbrella41" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella42" parent="." instance=ExtResource( 1 )]
 position = Vector2( 17134, 42 )
 
-[node name="Umbrella42" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella43" parent="." instance=ExtResource( 1 )]
 position = Vector2( 17267, -79 )
 
-[node name="Umbrella43" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella44" parent="." instance=ExtResource( 1 )]
 position = Vector2( 17369, -81 )
 
-[node name="Umbrella44" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella45" parent="." instance=ExtResource( 1 )]
 position = Vector2( 17248, 48 )
 
-[node name="Umbrella45" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella46" parent="." instance=ExtResource( 1 )]
 position = Vector2( 17173, -57 )
 
-[node name="Umbrella46" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella47" parent="." instance=ExtResource( 1 )]
 position = Vector2( 17320, -167 )
 
-[node name="Umbrella47" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella48" parent="." instance=ExtResource( 1 )]
 position = Vector2( 5920, 250 )
 
-[node name="Umbrella48" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella49" parent="." instance=ExtResource( 1 )]
 position = Vector2( 6699, 100 )
 
-[node name="Umbrella49" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella50" parent="." instance=ExtResource( 1 )]
 position = Vector2( 7249, -173 )
 
-[node name="Umbrella50" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella51" parent="." instance=ExtResource( 1 )]
 position = Vector2( 7370, 158 )
 
-[node name="Umbrella51" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella52" parent="." instance=ExtResource( 1 )]
 position = Vector2( 7722, 194 )
 
-[node name="Umbrella52" parent="." instance=ExtResource( 1 )]
+[node name="Umbrella53" parent="." instance=ExtResource( 1 )]
 position = Vector2( 8079, 105 )
