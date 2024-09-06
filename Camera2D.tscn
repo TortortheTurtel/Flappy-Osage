@@ -28,6 +28,7 @@ z_index = 2
 current = true
 
 [node name="Overseer" parent="." instance=ExtResource( 6 )]
+position = Vector2( 639, -65 )
 
 [node name="BgV3" type="Sprite" parent="."]
 position = Vector2( -63, 227 )
@@ -118,9 +119,6 @@ rect_pivot_offset = Vector2( 97, 9.5 )
 input_pass_on_modal_close_click = false
 custom_fonts/font = ExtResource( 1 )
 text = "Umbrellas Found"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="FPS" type="Label" parent="Control"]
 margin_left = 780.0

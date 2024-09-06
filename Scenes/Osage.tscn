@@ -82,3 +82,10 @@ collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
+
+[connection signal="eaten_by_osage" from="Camera2D/Overseer" to="." method="_on_Overseer_eaten_by_osage"]
+[connection signal="osage_rage" from="Camera2D/Overseer" to="." method="_on_Overseer_osage_rage"]
+[connection signal="win_normal" from="Camera2D/Overseer" to="." method="_on_Overseer_win_normal"]
+[connection signal="win_perfect" from="Camera2D/Overseer" to="." method="_on_Overseer_win_perfect"]
+
+[editable path="Camera2D"]

@@ -160,7 +160,7 @@ func lose():
 	
 	if Losetime.time_left <= 0:
 		if Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_cancel") :
-			get_tree().reload_current_scene()
+			var _unused_var = get_tree().reload_current_scene()
 
 signal win_time
 
@@ -183,7 +183,7 @@ func move(delta):
 		
 		emit_signal("win_time")
 		
-		if position.y != 0:
+		if position.y != 0: #intended to make osage be centered when winning
 			position.y *= .95
 	
 	if game_state != LOSE:
@@ -202,9 +202,7 @@ func get_gravity() -> float:
 	
 	return gravity_rise if velocity.y < 0 else gravity_fall
 
-
 signal score
-
 
 func _on_Scorehitbox_area_entered(_area): #Scorehitbox area
 	score_set(1) 
@@ -250,3 +248,5 @@ func _on_Umbrella_somethingTouchedMyChild():
 func _on_Towers_somethingTouchedMyChild():
 	lose()
 	
+
+

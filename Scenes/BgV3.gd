@@ -6,10 +6,11 @@ var enter_x = 1064
 var enter_y = 226
 
 func _ready():
-	randomize()
-	rng.randomize()
-	scroll_speed = rng.randf_range(1.0, 2.0)
-	scale.y = rng.randf_range(0.7, 2)
+##	randomize()
+#	rng.randomize()
+#	scroll_speed = rng.randf_range(1.0, 2.0)
+#	scale.y = rng.randf_range(0.7, 2)
+	pass
 
 func Resetting():
 	position.x = enter_x

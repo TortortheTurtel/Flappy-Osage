@@ -9,6 +9,12 @@ extents = Vector2( 63.6225, 41.8972 )
 [node name="tower1type 2" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( -7.27585, -57.5 )
+scale = Vector2( 7.67241, 32.95 )
+process_parent = true
+physics_process_parent = true
+
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -3, -74 )
 scale = Vector2( 0.789655, 0.85125 )
@@ -22,4 +28,5 @@ scale = Vector2( 0.789655, 0.85125 )
 position = Vector2( -2.95918, -274.308 )
 shape = SubResource( 1 )
 
+[connection signal="viewport_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_viewport_exited"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

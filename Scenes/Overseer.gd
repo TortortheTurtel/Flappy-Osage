@@ -1,13 +1,19 @@
 extends Sprite
 
+
+#IGNORE THIS WHOLE THING PLEASE I BEG YOU :DDDD
+#BUGS: DOESNT PAUSE WHEN PAUSED, i plan on just turning this whole thing into a video
+#instead of whatever this is...
+
+
 onready var time = 0 setget setTime
 var isWinning = false
 
 var final_score = 0
 var score = 0 setget setScore
-var game_state = GAMMING
+var game_state = GAMING
 enum{
-	GAMMING,
+	GAMING,
 	PAUSE
 }
 
@@ -25,7 +31,7 @@ func disappear():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if game_state == GAMMING:
+	if game_state == GAMING:
 		setTime(delta)
 	else:
 		pass
@@ -134,7 +140,7 @@ func setScore(i): #finalScore
 func _on_Osage_game_paused():
 	game_state = PAUSE
 func _on_Osage_game_resumed():
-	game_state = GAMMING
+	game_state = GAMING
 func _on_Osage_game_reset():
 	time = 0 
 	score = 0
@@ -147,7 +153,7 @@ func _on_Osage_score():
 
 func _on_Osage_win_time():
 	isWinning = true
-	if score > 0:
+	if score > 0: #turn to 0 but with style
 		setScore(-1)
 
 var umbrella_death = 0
