@@ -3,7 +3,7 @@ extends Sprite
 onready var rng = RandomNumberGenerator.new()
 onready var spin_speed = 10
 onready var fall_speed = 30
-signal die
+
 
 func _ready():
 	randomize()
@@ -16,8 +16,9 @@ func _ready():
 
 func _process(delta):
 	rotation_degrees += spin_speed * rng.randf_range(1,5) * delta
-#	position.y += fall_speed * rng.randf_range(1,5) * delta
-	if position.y >= 320:
-		print("a")
-		emit_signal("die")
-		queue_free()
+
+signal somethingTouchedMeKyaaa
+
+func _on_Area2D_area_entered(area): #umbrella touched
+	emit_signal("somethingTouchedMeKyaaa")
+

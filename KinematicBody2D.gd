@@ -18,7 +18,7 @@ onready var Sounds_Sprinkle = $SoundfFx/Sprinkle
 onready var Sounds_Lose = $SoundfFx/Lose
 onready var Sounds_Wep = $SoundfFx/Wep
 onready var Sounds_Jump = $SoundfFx/Jump
-onready var Sounds_Kimi = $SoundfFx/Kimi
+onready var Music_KimiNiKaikisen = $SoundfFx/Kimi
 
 
 var score = 0 setget setscore
@@ -38,7 +38,7 @@ func setGame_State(state):
 	if state == LOSE:
 		effectSlider.visible = false
 		musicSlider.visible = false
-		Sounds_Kimi.stream_paused = false
+		Music_KimiNiKaikisen.stream_paused = false
 		Credits_text.visible = true
 		if losetype == Normal:
 			Sounds_Lose.play()
@@ -46,14 +46,14 @@ func setGame_State(state):
 		Credits_text.visible = false
 		effectSlider.visible = false
 		musicSlider.visible = false
-		Sounds_Kimi.stream_paused = false
+		Music_KimiNiKaikisen.stream_paused = false
 		Sounds_Sprinkle.play()
 		emit_signal("game_resumed")
 	elif state == PAUSE:
 		Credits_text.visible = true
 		effectSlider.visible = true
 		musicSlider.visible = true
-		Sounds_Kimi.stream_paused = true
+		Music_KimiNiKaikisen.stream_paused = true
 		Sounds_Sprinkle.play()
 		emit_signal("game_paused")
 	
@@ -68,13 +68,10 @@ onready var musicSlider = $Camera2D/Control/Music
 onready var effectSlider = $Camera2D/Control/Effects2
 
 func _ready():
-	Sounds_Kimi.play()
+	Music_KimiNiKaikisen.play()
 	effectSlider.visible = false
 	musicSlider.visible = false
 	Credits_text.visible = false
-
-func animation():
-	pass
 
 
 func _physics_process(delta):
@@ -135,7 +132,7 @@ enum {
 
 func lose():
 	sprite.frame = 2
-	Sounds_Kimi.volume_db -= 0.2
+	Music_KimiNiKaikisen.volume_db -= 0.2
 	velocity = Vector2.ZERO
 	
 	if game_state == GAMING:
@@ -155,7 +152,7 @@ func lose():
 			pause_text.text = "You Win!"
 			sprite.frame = 1
 		PerfWin:
-			pause_text.text = "You found ALL of the Umbrellas! (sorry, I have no time to make this ending interesting lol)"
+			pause_text.text = "You found ALL of the Umbrellas! (sorry, I have no time to make this ending interesting lol)" #well I have more time now so eh
 			pause_text.margin_top = 500
 			pause_text.margin_left = -10
 			pause_text.margin_bottom = 0
@@ -168,11 +165,11 @@ func lose():
 			position.y = 0
 			setscore(-score)
 			setGame_State(GAMING)
-			Sounds_Kimi.play()
+			Music_KimiNiKaikisen.play()
 			pause_text.margin_top = -500
 			get_node("Sprite").visible = true
 			losetype = Normal
-			Sounds_Kimi.volume_db = -80 + MusicVal
+			Music_KimiNiKaikisen.volume_db = -80 + MusicVal
 			emit_signal("game_reset")
 
 
@@ -183,16 +180,14 @@ func move(delta):
 	if game_state != LOSE:
 		velocity.x = 100
 	
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept"): #m1 or spacebar
 		Sounds_Jump.play()
 		velocity.y = jump_velocity
 	
-	if position.y > 300 or position.y < -300:
+	if position.y > 300 or position.y < -300: #lose when too high or too low 
 		lose()
 	
-
-	
-	if position.x >= 19050:
+	if position.x >= 19050: #this is ending condition  # will move it to a hitbox at the end of the map instead lol
 		velocity.x = 0
 		velocity.y = 0
 		
@@ -205,8 +200,6 @@ func move(delta):
 		velocity = move_and_slide(velocity, Vector2.UP)
 	camera.global_position.y = 0
 
-
-
 func get_gravity() -> float:
 	if velocity.y < 0:
 		sprite.frame = 0
@@ -218,13 +211,13 @@ func get_gravity() -> float:
 	
 	return gravity_rise if velocity.y < 0 else gravity_fall
 
+
 signal score
 
-
-func _on_Area2D_area_entered(_area):
+func _on_Area2D_area_entered(_area): #hurt area
 	lose()
 
-func _on_Scorehitbox_area_entered(_area):
+func _on_Scorehitbox_area_entered(_area): #Scorehitbox area
 	setscore(1) 
 
 var FXVal = 50
@@ -232,7 +225,7 @@ var MusicVal = 50
 
 func _on_Music_value_changed(value):
 	MusicVal = value
-	Sounds_Kimi.volume_db = -80 + value
+	Music_KimiNiKaikisen.volume_db = -80 + value
 
 
 func _on_Effects2_value_changed(value):
@@ -261,3 +254,9 @@ func _on_Overseer_win_normal():
 func _on_Overseer_win_perfect():
 	losetype = PerfWin
 	lose()
+
+
+
+
+func _on_Umbrella_somethingTouchedMyChild():
+	print("a")
