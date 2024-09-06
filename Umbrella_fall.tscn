@@ -8,3 +8,4 @@ z_index = -80
 script = ExtResource( 1 )
 
 [node name="Umbrella" parent="." instance=ExtResource( 2 )]
+scale = Vector2( 0.886207, 0.865517 )

@@ -142,7 +142,7 @@ func lose():
 	pause_text.margin_top = 0
 	match losetype:
 		Normal:
-			pause_text.text = "YOU LOST!"
+			pause_text.text = "YOU LOST!" #repurpose the pause text ofc
 		Eaten:
 			pause_text.text = "YOU WERE EATEN!"
 		Rage:
@@ -151,7 +151,7 @@ func lose():
 			pause_text.text = "You Win!"
 			sprite.frame = 1
 		PerfWin:
-			pause_text.text = "You found ALL of the Umbrellas! (sorry, I have no time to make this ending interesting lol)" #well I have more time now so eh
+			pause_text.text = "You found ALL of the Umbrellas!"
 			pause_text.margin_top = 500
 			pause_text.margin_left = -10
 			pause_text.margin_bottom = 0
@@ -205,9 +205,6 @@ func get_gravity() -> float:
 
 signal score
 
-func _on_Area2D_area_entered(_area): #hurt area
-	print("something touched me - oge")
-#	lose()
 
 func _on_Scorehitbox_area_entered(_area): #Scorehitbox area
 	score_set(1) 
