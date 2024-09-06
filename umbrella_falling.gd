@@ -19,6 +19,8 @@ func _process(delta):
 
 signal somethingTouchedMeKyaaa
 
-func _on_Area2D_area_entered(area): #umbrella touched
+func _on_Area2D_area_entered(_area): #umbrella touched
+	self.connect("somethingTouchedMeKyaaa", self.get_parent(), "_on_Umbrella5_somethingTouchedMeKyaaa")
 	emit_signal("somethingTouchedMeKyaaa")
+	queue_free()
 

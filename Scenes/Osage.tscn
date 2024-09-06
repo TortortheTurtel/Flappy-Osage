@@ -11,12 +11,13 @@
 [ext_resource path="res://Assets/Audio/MOU_Fixed.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Audio/kiminikaikaisen.mp3" type="AudioStream" id=10]
 
-[sub_resource type="CircleShape2D" id=4]
-radius = 9.05539
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 13.0
+height = 32.0
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 16.0
-height = 28.0
+radius = 13.0
+height = 32.0
 
 [node name="Osage" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -62,7 +63,6 @@ volume_db = -30.0
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 3, 3 )
 scale = Vector2( 0.289655, 0.289655 )
 texture = ExtResource( 2 )
 hframes = 3
@@ -71,26 +71,12 @@ frame = 3
 region_rect = Rect2( 0, 0, 290, 560 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 6, 0 )
-shape = SubResource( 4 )
+position = Vector2( 6, 4 )
+shape = SubResource( 1 )
 disabled = true
 
-[node name="Hurt" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 6, 4 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt"]
-modulate = Color( 0.862745, 0.0823529, 0.0823529, 1 )
-position = Vector2( 10, 6 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 2 )
-
-[node name="Scorehitbox" type="Area2D" parent="."]
-position = Vector2( 0, 2 )
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scorehitbox"]
-modulate = Color( 0.619608, 0.192157, 0.192157, 1 )
-position = Vector2( 10, 4 )
-shape = SubResource( 2 )
-
-[connection signal="area_entered" from="Hurt" to="." method="_on_Area2D_area_entered"]
-[connection signal="area_entered" from="Scorehitbox" to="." method="_on_Scorehitbox_area_entered"]

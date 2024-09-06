@@ -21,7 +21,7 @@ onready var Sounds_Jump = $SoundfFx/Jump
 onready var Music_KimiNiKaikisen = $SoundfFx/Kimi
 
 
-var score = 0 setget setscore
+var score = 0 setget score_set 
 var velocity = Vector2.ZERO
 
 var game_state = GAMING setget setGame_State,getGame_State
@@ -103,7 +103,7 @@ func pause():
 
 onready var score_counter = $Camera2D/Control/ScoreCount
 
-func setscore(addScore):
+func score_set(addScore):
 	emit_signal("score")
 	if addScore >= 1:
 		Happytime.start()
@@ -119,7 +119,6 @@ func _unhandled_input(_event):
 			pause_text.margin_top = -500
 			setGame_State(GAMING)
 
-signal game_reset
 
 var losetype = Normal
 enum {
@@ -161,21 +160,12 @@ func lose():
 	
 	if Losetime.time_left <= 0:
 		if Input.is_action_just_pressed("ui_down") or Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("ui_cancel") :
-			position.x = -485
-			position.y = 0
-			setscore(-score)
-			setGame_State(GAMING)
-			Music_KimiNiKaikisen.play()
-			pause_text.margin_top = -500
-			get_node("Sprite").visible = true
-			losetype = Normal
-			Music_KimiNiKaikisen.volume_db = -80 + MusicVal
-			emit_signal("game_reset")
-
+			get_tree().reload_current_scene()
 
 signal win_time
 
 func move(delta):
+	
 	velocity.y += get_gravity() * delta
 	if game_state != LOSE:
 		velocity.x = 100
@@ -198,7 +188,8 @@ func move(delta):
 	
 	if game_state != LOSE:
 		velocity = move_and_slide(velocity, Vector2.UP)
-	camera.global_position.y = 0
+	
+	camera.global_position.y = 0 #locks camera y
 
 func get_gravity() -> float:
 	if velocity.y < 0:
@@ -215,10 +206,11 @@ func get_gravity() -> float:
 signal score
 
 func _on_Area2D_area_entered(_area): #hurt area
-	lose()
+	print("something touched me - oge")
+#	lose()
 
 func _on_Scorehitbox_area_entered(_area): #Scorehitbox area
-	setscore(1) 
+	score_set(1) 
 
 var FXVal = 50
 var MusicVal = 50
@@ -255,8 +247,9 @@ func _on_Overseer_win_perfect():
 	losetype = PerfWin
 	lose()
 
-
-
-
 func _on_Umbrella_somethingTouchedMyChild():
-	print("a")
+	score_set(1) #adds 1 score, doesn't set it to one.
+
+func _on_Towers_somethingTouchedMyChild():
+	lose()
+	
