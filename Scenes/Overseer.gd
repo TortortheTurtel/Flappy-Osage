@@ -18,26 +18,41 @@ enum{
 }
 
 
-func _ready():
+func _ready(): 
 	normal()
 
-func normal():
+func normal(): #for repositioning the overseer
 	position = Vector2(278,37)
 	scale = Vector2(0.8,0.8)
 	frame = 1
 
-func disappear():
+
+func disappear(): #for repositioning the overseer
 	frame = 3
+
+
+var isGaming = 1#temporary fix
+func _unhandled_input(_event): #temporary fix, will have it be based on signals from player someday 
+	if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("ui_accept"):
+		if game_state == GAMING and Input.is_action_just_pressed("ui_accept") != true:
+			game_state = PAUSE
+		elif game_state == PAUSE:
+			game_state = GAMING
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	if game_state == GAMING:
+		isGaming = 1
+		setTime(delta)
+	if game_state == PAUSE:
+		isGaming = 0
 		setTime(delta)
 	else:
 		pass
 
 func setTime(delta):
-	time += delta
+	time += delta * isGaming#temporary fix
+#	print(time)
 	if isWinning == false:
 		if time >= 0 and time <= 1:
 			normal()
@@ -115,9 +130,11 @@ func setTime(delta):
 					frame = 1
 				else:
 					frame = 2
+		
 		if final_score > 39 and final_score < 52 and umbrella_death >= final_score:
 			frame = 0
 			emit_signal("win_normal")
+		
 		if final_score == 52 and umbrella_death >= final_score:
 			frame = 1
 			if scale <= Vector2(0.3,0.3):
@@ -134,8 +151,6 @@ func setScore(i): #finalScore
 	if i == -1:
 		emit_signal("score_reduced")
 	score += i
-
-
 
 func _on_Osage_game_paused():
 	game_state = PAUSE

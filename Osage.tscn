@@ -150,7 +150,7 @@ position = Vector2( 5442, 260 )
 position = Vector2( 5812, -22 )
 
 [node name="towerIII12" parent="Towers" instance=ExtResource( 5 )]
-position = Vector2( 6041, 225 )
+position = Vector2( 6077, 233 )
 
 [node name="tower9" parent="Towers" instance=ExtResource( 3 )]
 position = Vector2( 6242, 347 )
