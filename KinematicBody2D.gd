@@ -12,13 +12,14 @@ onready var camera = $Camera2D
 onready var sprite = $Sprite
 onready var Happytime = $HappyTime
 onready var Losetime = $LoseTime
+
 onready var Sounds_Bling = $SoundfFx/Bling
 onready var Sounds_Sweet = $SoundfFx/Sweet
 onready var Sounds_Sprinkle = $SoundfFx/Sprinkle
 onready var Sounds_Lose = $SoundfFx/Lose
 onready var Sounds_Wep = $SoundfFx/Wep
 onready var Sounds_Jump = $SoundfFx/Jump
-onready var Music_KimiNiKaikisen = $SoundfFx/Kimi
+onready var Music_KimiNiKaikisen = $SoundfFx/Kimi #music
 
 
 var score = 0 setget score_set 
@@ -102,6 +103,8 @@ func pause():
 
 
 onready var score_counter = $Camera2D/Control/ScoreCount
+signal score
+var umbrellaCount = 0
 
 func score_set(addScore):
 	emit_signal("score")
@@ -109,7 +112,7 @@ func score_set(addScore):
 		Happytime.start()
 		Sounds_Bling.play()
 	score += addScore
-	score_counter.text = str(score) + " out of 52" # to be changed in the future
+	score_counter.text = str(score) + " out of " + str(umbrellaCount) 
 
 func _unhandled_input(_event):
 	if Input.is_action_just_pressed("ui_cancel") or Input.is_action_just_pressed("ui_accept"):
@@ -202,7 +205,6 @@ func get_gravity() -> float:
 	
 	return gravity_rise if velocity.y < 0 else gravity_fall
 
-signal score
 
 func _on_Scorehitbox_area_entered(_area): #Scorehitbox area
 	score_set(1) 
@@ -247,6 +249,7 @@ func _on_Umbrella_somethingTouchedMyChild():
 
 func _on_Towers_somethingTouchedMyChild():
 	lose()
-	
 
 
+func _on_Umbrella_umbrellaCount(umbrellaCountFromSignal):
+	umbrellaCount = umbrellaCountFromSignal

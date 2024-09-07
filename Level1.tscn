@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Scenes/Osage.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Character/Osage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/tower1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/towerII.tscn" type="PackedScene" id=4]
@@ -442,6 +442,9 @@ position = Vector2( 12296, -210 )
 [node name="Umbrella32" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 12478, -210 )
 
+[node name="Umbrella53" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 13305, 241 )
+
 [node name="Umbrella36" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 14151, 194 )
 
@@ -493,6 +496,9 @@ position = Vector2( 7722, 194 )
 [node name="Umbrella52" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 8079, 105 )
 
+[node name="umbrella" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 522, -18 )
+
 [node name="winCondition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="winCondition"]
@@ -501,3 +507,4 @@ shape = SubResource( 4 )
 
 [connection signal="somethingTouchedMyChild" from="Towers" to="Osage" method="_on_Towers_somethingTouchedMyChild"]
 [connection signal="somethingTouchedMyChild" from="Umbrella" to="Osage" method="_on_Umbrella_somethingTouchedMyChild"]
+[connection signal="umbrellaCount" from="Umbrella" to="Osage" method="_on_Umbrella_umbrellaCount"]

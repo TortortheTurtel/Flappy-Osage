@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Flappy Osage"
-run/main_scene="res://Osage.tscn"
+run/main_scene="res://Scenes/Main Menu/Main menu.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -85,4 +85,4 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 environment/default_clear_color=Color( 0.698039, 0.698039, 0.698039, 1 )
-environment/default_environment="res://default_env.tres"
+environment/default_environment="res://fontsstyles/default_env.tres"

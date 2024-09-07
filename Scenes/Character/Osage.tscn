@@ -2,7 +2,7 @@
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Osage/Osage_frames_2.png" type="Texture" id=2]
-[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Camera2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Audio/FX_-_Jump_-_D_or_Eb_Mefenamic.wav" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Audio/FX_-_Bling_-_C_Mefenamic.wav" type="AudioStream" id=5]
 [ext_resource path="res://Assets/Audio/FX_-_Sweet_-_B_Mefenamic.wav" type="AudioStream" id=6]
@@ -66,6 +66,10 @@ stream = ExtResource( 10 )
 volume_db = -30.0
 
 [node name="Camera2D" parent="." instance=ExtResource( 3 )]
+
+[node name="ScoreCount" parent="Camera2D/Control" index="2"]
+text = "0 out of 53
+But you only need 40"
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.289655, 0.289655 )

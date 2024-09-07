@@ -10,9 +10,5 @@ func _ready():
 func _on_Area2D_area_entered(_area):
 	emit_signal("windowTouch")
 
-
 func _on_VisibilityEnabler2D_viewport_exited(_viewport):
 	queue_free()
-
-
-
