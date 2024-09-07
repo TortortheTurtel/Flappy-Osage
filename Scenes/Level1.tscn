@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Character/Osage.tscn" type="PackedScene" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Assets/icon.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/tower1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/towerII.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/towerIII.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Towers.gd" type="Script" id=6]
+[ext_resource path="res://scripts/Towers.gd" type="Script" id=6]
+[ext_resource path="res://scripts/CheckPoints.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Umbrella.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Umbrella.gd" type="Script" id=9]
+[ext_resource path="res://scripts/Umbrella.gd" type="Script" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -36,7 +37,7 @@ points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
 0/z_index = 0
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 203.25, 612.5 )
+extents = Vector2( 27.625, 397 )
 
 [node name="World" type="Node2D"]
 
@@ -346,6 +347,9 @@ position = Vector2( 66, 27 )
 [node name="Umbrella8" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 1232, 200 )
 
+[node name="Umbrella54" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 1832, -41 )
+
 [node name="Umbrella2" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 1375, -188 )
 
@@ -371,10 +375,10 @@ position = Vector2( 2090, 203 )
 position = Vector2( 2645, 59 )
 
 [node name="Umbrella6" parent="Umbrella" instance=ExtResource( 8 )]
-position = Vector2( 3076, -4 )
+position = Vector2( 3096, 29 )
 
 [node name="Umbrella7" parent="Umbrella" instance=ExtResource( 8 )]
-position = Vector2( 3342, 170 )
+position = Vector2( 3617, 181 )
 
 [node name="Umbrella14" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 4099, 148 )
@@ -498,6 +502,17 @@ position = Vector2( 8079, 105 )
 
 [node name="umbrella" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 522, -18 )
+
+[node name="CheckPoints" type="Node2D" parent="."]
+script = ExtResource( 7 )
+
+[node name="checkPoint" type="Area2D" parent="CheckPoints"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/checkPoint"]
+position = Vector2( 1944.38, -22 )
+shape = SubResource( 4 )
 
 [node name="winCondition" type="Area2D" parent="."]
 
