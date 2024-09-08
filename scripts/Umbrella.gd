@@ -14,7 +14,7 @@ func _on_Umbrella_position(UmbrellaXPos):
 	
 	if UmbrellaXPosArray.size() == self.get_child_count(): #I can't store self.get_child_count() as variable without it turning to 0 :P
 		UmbrellaXPosArray.sort()
-		emit_signal("umbrellaPositions", UmbrellaXPosArray) # send to checkpoints
+		emit_signal("umbrellaPositions", UmbrellaXPosArray) # send to CheckPoints
 
 func _on_Umbrella_somethingTouchedMeKyaaa(): #relays the signal to player after receiving it
 	emit_signal("somethingTouchedMyChild") 

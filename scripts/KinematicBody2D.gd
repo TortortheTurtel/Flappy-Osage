@@ -112,7 +112,7 @@ func set_score(setScore):
 	if score >= prev_score:
 		Happytime.start()
 		Sounds_Bling.play()
-		emit_signal("score")
+		emit_signal("score") #pass to checkpoints
 	score_counter.text = str(score) + " out of " + str(umbrellaCount) 
 
 func _unhandled_input(_event):

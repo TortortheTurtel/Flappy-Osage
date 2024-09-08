@@ -12,7 +12,9 @@ config_version=4
 
 config/name="Flappy Osage"
 run/main_scene="res://Scenes/Main Menu/Main menu.tscn"
-config/icon="res://Assets/icon.png"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="FlappyOsage"
+config/icon="res://Assets/Osage/umbrella glowing.png"
 
 [display]
 
@@ -23,6 +25,7 @@ window/stretch/aspect="keep"
 
 fps=false
 frame=false
+customdir=false
 
 [importer_defaults]
 

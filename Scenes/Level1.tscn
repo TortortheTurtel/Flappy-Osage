@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/Character/Osage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/icon.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/Umbrella.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/Umbrella.gd" type="Script" id=9]
 [ext_resource path="res://fontsstyles/Camera2D.tres" type="DynamicFont" id=10]
+[ext_resource path="res://scripts/Save.gd" type="Script" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -509,6 +510,9 @@ collision_mask = 4
 position = Vector2( 1964, -29 )
 shape = SubResource( 4 )
 
+[node name="Save" type="Node2D" parent="."]
+script = ExtResource( 11 )
+
 [node name="winCondition" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="winCondition"]
@@ -526,6 +530,7 @@ custom_fonts/font = ExtResource( 10 )
 text = "space or m1 to jump,
 esc or m2 to pause"
 
+[connection signal="score" from="Osage" to="CheckPoints" method="_on_Osage_score"]
 [connection signal="somethingTouchedMyChild" from="Towers" to="Osage" method="_on_Towers_somethingTouchedMyChild"]
 [connection signal="somethingTouchedMyChild" from="Umbrella" to="Osage" method="_on_Umbrella_somethingTouchedMyChild"]
 [connection signal="umbrellaCount" from="Umbrella" to="Osage" method="_on_Umbrella_umbrellaCount"]
