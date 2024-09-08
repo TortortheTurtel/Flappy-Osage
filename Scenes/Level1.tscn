@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/Character/Osage.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/icon.png" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scripts/CheckPoints.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Umbrella.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/Umbrella.gd" type="Script" id=9]
+[ext_resource path="res://fontsstyles/Camera2D.tres" type="DynamicFont" id=10]
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 64, 64, 0, 64, 0, 0, 64, 0 )
@@ -95,7 +96,7 @@ position = Vector2( 2256, 120 )
 position = Vector2( 2404, 8 )
 
 [node name="towerIII5" parent="Towers" instance=ExtResource( 5 )]
-position = Vector2( 2527, 50 )
+position = Vector2( 2543, 40 )
 
 [node name="tower3" parent="Towers" instance=ExtResource( 3 )]
 position = Vector2( 2737, 238 )
@@ -203,7 +204,7 @@ position = Vector2( 9095, 239 )
 position = Vector2( 9263, 84 )
 
 [node name="tower18" parent="Towers" instance=ExtResource( 3 )]
-position = Vector2( 9292, 441 )
+position = Vector2( 9295, 393 )
 
 [node name="towerII15" parent="Towers" instance=ExtResource( 4 )]
 position = Vector2( 9468, 266 )
@@ -372,13 +373,13 @@ position = Vector2( 8442, 168 )
 position = Vector2( 2090, 203 )
 
 [node name="Umbrella4" parent="Umbrella" instance=ExtResource( 8 )]
-position = Vector2( 2645, 59 )
+position = Vector2( 2427, 193 )
 
 [node name="Umbrella6" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 3096, 29 )
 
 [node name="Umbrella7" parent="Umbrella" instance=ExtResource( 8 )]
-position = Vector2( 3617, 181 )
+position = Vector2( 3611, 109 )
 
 [node name="Umbrella14" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 4099, 148 )
@@ -390,7 +391,7 @@ position = Vector2( 4502, -270 )
 position = Vector2( 4630, 17 )
 
 [node name="Umbrella17" parent="Umbrella" instance=ExtResource( 8 )]
-position = Vector2( 5077, -248 )
+position = Vector2( 5056, -192 )
 
 [node name="Umbrella18" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 8750, 190 )
@@ -399,7 +400,7 @@ position = Vector2( 8750, 190 )
 position = Vector2( 9827, 130 )
 
 [node name="Umbrella24" parent="Umbrella" instance=ExtResource( 8 )]
-position = Vector2( 10029, 90 )
+position = Vector2( 9283, -60 )
 
 [node name="Umbrella19" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 9010, -3 )
@@ -434,14 +435,8 @@ position = Vector2( 13163, -201 )
 [node name="Umbrella35" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 13821, -226 )
 
-[node name="Umbrella29" parent="Umbrella" instance=ExtResource( 8 )]
-position = Vector2( 11959, -212 )
-
 [node name="Umbrella30" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 12122, -215 )
-
-[node name="Umbrella31" parent="Umbrella" instance=ExtResource( 8 )]
-position = Vector2( 12296, -210 )
 
 [node name="Umbrella32" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 12478, -210 )
@@ -450,7 +445,7 @@ position = Vector2( 12478, -210 )
 position = Vector2( 13305, 241 )
 
 [node name="Umbrella36" parent="Umbrella" instance=ExtResource( 8 )]
-position = Vector2( 14151, 194 )
+position = Vector2( 14073, 115 )
 
 [node name="Umbrella37" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 14907, -143 )
@@ -483,7 +478,7 @@ position = Vector2( 17173, -57 )
 position = Vector2( 17320, -167 )
 
 [node name="Umbrella47" parent="Umbrella" instance=ExtResource( 8 )]
-position = Vector2( 5920, 250 )
+position = Vector2( 5875, 182 )
 
 [node name="Umbrella48" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 6699, 100 )
@@ -494,24 +489,24 @@ position = Vector2( 7249, -173 )
 [node name="Umbrella50" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 7370, 158 )
 
+[node name="Umbrella55" parent="Umbrella" instance=ExtResource( 8 )]
+position = Vector2( 7672, -197 )
+
 [node name="Umbrella51" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 7722, 194 )
 
 [node name="Umbrella52" parent="Umbrella" instance=ExtResource( 8 )]
 position = Vector2( 8079, 105 )
 
-[node name="umbrella" parent="Umbrella" instance=ExtResource( 8 )]
-position = Vector2( 522, -18 )
-
 [node name="CheckPoints" type="Node2D" parent="."]
 script = ExtResource( 7 )
 
-[node name="checkPoint" type="Area2D" parent="CheckPoints"]
+[node name="checkPointArea2D" type="Area2D" parent="CheckPoints"]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/checkPoint"]
-position = Vector2( 1944.38, -22 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoints/checkPointArea2D"]
+position = Vector2( 1964, -29 )
 shape = SubResource( 4 )
 
 [node name="winCondition" type="Area2D" parent="."]
@@ -520,6 +515,19 @@ shape = SubResource( 4 )
 position = Vector2( 17976, -1 )
 shape = SubResource( 4 )
 
+[node name="TutorialText" type="Label" parent="."]
+margin_left = -328.0
+margin_top = 196.0
+margin_right = -12.0
+margin_bottom = 272.0
+rect_pivot_offset = Vector2( 39, 76.25 )
+input_pass_on_modal_close_click = false
+custom_fonts/font = ExtResource( 10 )
+text = "space or m1 to jump,
+esc or m2 to pause"
+
 [connection signal="somethingTouchedMyChild" from="Towers" to="Osage" method="_on_Towers_somethingTouchedMyChild"]
 [connection signal="somethingTouchedMyChild" from="Umbrella" to="Osage" method="_on_Umbrella_somethingTouchedMyChild"]
 [connection signal="umbrellaCount" from="Umbrella" to="Osage" method="_on_Umbrella_umbrellaCount"]
+[connection signal="umbrellaPositions" from="Umbrella" to="CheckPoints" method="_on_Umbrella_umbrellaPositions"]
+[connection signal="area_entered" from="CheckPoints/checkPointArea2D" to="CheckPoints" method="_on_checkPointArea2D_area_entered"]

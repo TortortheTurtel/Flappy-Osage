@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://fontsstyles/Camera2D.tres" type="DynamicFont" id=1]
 [ext_resource path="res://scripts/Cloud.gd" type="Script" id=2]
@@ -8,7 +8,9 @@
 [ext_resource path="res://Scenes/Overseer.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/FPS.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Osage/cloud.png" type="Texture" id=8]
+[ext_resource path="res://scripts/ScoreCount.gd" type="Script" id=9]
 [ext_resource path="res://Assets/Osage/sound icon.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Osage/PauseButton3-Sheet-export.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=5]
 size = 24
@@ -85,46 +87,33 @@ text = "GAME
 PAUSED"
 align = 1
 
-[node name="Label2" type="Label" parent="Control"]
-margin_left = 10.0
-margin_top = 20.0
-margin_right = 239.0
-margin_bottom = 96.0
-rect_pivot_offset = Vector2( 39, 76.25 )
-input_pass_on_modal_close_click = false
-custom_fonts/font = ExtResource( 1 )
-text = "space or m1 to jump,
-esc or m2 to pause"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ScoreCount" type="Label" parent="Control"]
-margin_left = 8.0
-margin_top = 132.0
-margin_right = 277.0
-margin_bottom = 185.0
+margin_left = 10.0
+margin_top = 51.0
+margin_right = 342.0
+margin_bottom = 120.0
 rect_pivot_offset = Vector2( 97, 9.5 )
 input_pass_on_modal_close_click = false
 custom_fonts/font = ExtResource( 1 )
 text = "0 out of 52
 But you only need 40"
+script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="Control"]
-margin_left = 8.0
-margin_top = 98.0
-margin_right = 197.0
-margin_bottom = 123.0
+margin_left = 10.0
+margin_top = 17.0
+margin_right = 265.0
+margin_bottom = 50.0
 rect_pivot_offset = Vector2( 97, 9.5 )
 input_pass_on_modal_close_click = false
 custom_fonts/font = ExtResource( 1 )
-text = "Umbrellas Found"
+text = "Umbrellas Found:"
 
 [node name="FPS" type="Label" parent="Control"]
-margin_left = 780.0
-margin_top = 21.0
-margin_right = 969.0
-margin_bottom = 46.0
+margin_left = 875.0
+margin_top = 115.0
+margin_right = 942.0
+margin_bottom = 148.0
 rect_pivot_offset = Vector2( 97, 9.5 )
 input_pass_on_modal_close_click = false
 custom_fonts/font = ExtResource( 1 )
@@ -182,3 +171,15 @@ Richard, Code
 Hamado,  Art 
 Meffenamic, Sound
 Inabakumori, Music"
+
+[node name="PauseButton" type="Button" parent="Control"]
+margin_left = 872.0
+margin_top = 14.0
+margin_right = 955.0
+margin_bottom = 102.0
+rect_clip_content = true
+custom_fonts/font = ExtResource( 1 )
+toggle_mode = true
+icon = ExtResource( 11 )
+icon_align = 1
+expand_icon = true

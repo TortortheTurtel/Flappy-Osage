@@ -22,7 +22,7 @@ onready var Sounds_Jump = $SoundfFx/Jump
 onready var Music_KimiNiKaikisen = $SoundfFx/Kimi #music
 
 
-var score = 0 setget score_set 
+var score = 0 setget set_score 
 var velocity = Vector2.ZERO
 
 var game_state = GAMING setget setGame_State,getGame_State
@@ -106,12 +106,13 @@ onready var score_counter = $Camera2D/Control/ScoreCount
 signal score
 var umbrellaCount = 0
 
-func score_set(addScore):
-	emit_signal("score")
-	if addScore >= 1:
+func set_score(setScore):
+	var prev_score = score
+	score = setScore
+	if score >= prev_score:
 		Happytime.start()
 		Sounds_Bling.play()
-	score += addScore
+		emit_signal("score")
 	score_counter.text = str(score) + " out of " + str(umbrellaCount) 
 
 func _unhandled_input(_event):
@@ -207,7 +208,7 @@ func get_gravity() -> float:
 
 
 func _on_Scorehitbox_area_entered(_area): #Scorehitbox area
-	score_set(1) 
+	set_score(1) 
 
 var FXVal = 50
 var MusicVal = 50
@@ -226,30 +227,31 @@ func _on_Effects2_value_changed(value):
 	Sounds_Wep.volume_db = -80 + value
 	Sounds_Jump.volume_db = -80 + value
 
+#Ignore this for now vvvv
 func _on_Overseer_eaten_by_osage():
 	get_node("Sprite").visible = false
 	losetype = Eaten
 	lose()
-
 func _on_Overseer_osage_rage():
 	get_node("Sprite").visible = false
 	losetype = Rage
 	lose()
-
 func _on_Overseer_win_normal():
 	losetype = Win
 	lose()
-
 func _on_Overseer_win_perfect():
 	losetype = PerfWin
 	lose()
+#Ignore that for now ^^^^
 
 func _on_Umbrella_somethingTouchedMyChild():
-	score_set(1) #adds 1 score, doesn't set it to one.
+	set_score(score + 1) #1 umbrella = 1 score.
 
 func _on_Towers_somethingTouchedMyChild():
 	lose()
 
-
+signal umbrella_count_from_thing  #im sorry for being terrible at naming things lol
 func _on_Umbrella_umbrellaCount(umbrellaCountFromSignal):
+	emit_signal("umbrella_count_from_thing", umbrellaCountFromSignal) # this goes out to the label "scorecounter" homie in camera2D control node
 	umbrellaCount = umbrellaCountFromSignal
+

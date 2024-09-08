@@ -1,14 +1,59 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Assets/Osage/umbrella.png" type="Texture" id=1]
-[ext_resource path="res://scripts/umbrella_falling.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Osage/umbrella glowing.png" type="Texture" id=1]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Sprite
+
+onready var rng = RandomNumberGenerator.new()
+onready var spin_speed = 10
+var isVisible = false
+signal stupidSignal
+
+func _ready():
+	#for score 
+	var _unusedVar = self.connect(\"somethingTouchedMeKyaaa\", self.get_parent(), \"_on_Umbrella_somethingTouchedMeKyaaa\")
+	
+	#send position for Checkpoint Algorithm
+	var stupidArray = [self.position.x]
+	var _stupidVar =  self.connect(\"stupidSignal\", self.get_parent(), \"_on_Umbrella_position\", stupidArray)
+	emit_signal(\"stupidSignal\")
+	
+	#aestheric purposes
+	randomize() 
+	rng.randomize() 
+	rotation = rng.randf_range(-1.0, 1.0)
+	scale.x = .7 + rng.randf_range(0,.3)
+	spin_speed *= rng.randf_range(1,5)
+	scale.y = scale.x
+	
+
+func _process(delta):
+	if isVisible == true:
+		rotation_degrees += spin_speed  * delta
+
+signal somethingTouchedMeKyaaa
+
+func _on_Area2D_area_entered(_area): #umbrella touched
+	emit_signal(\"somethingTouchedMeKyaaa\")
+	queue_free()
+
+func _on_VisibilityEnabler2D_screen_exited():
+	#to add, function that tells whether missed or not
+	queue_free() 
+
+
+
+func _on_VisibilityEnabler2D_screen_entered():
+	isVisible = true
+"
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 39.0
 
 [node name="umbrella" type="Sprite"]
 texture = ExtResource( 1 )
-script = ExtResource( 2 )
+script = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
