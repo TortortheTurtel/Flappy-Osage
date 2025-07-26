@@ -7,6 +7,8 @@ var scoreCounted = 0
 var scorestored = []
 
 func _on_checkPointArea2D_area_entered(_area):
+	
+	
 	# when oge touch, reset scoreCounted, assign score into the singleton
 	# 
 	
